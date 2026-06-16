@@ -24,8 +24,11 @@ var app = builder.Build();
 
 app.UseCors();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 // ── Health check ──────────────────────────────────────────────────────
-app.MapGet("/", () => Results.Ok(new { status = "ok", message = "Wedding Upload API" }));
+app.MapGet("/health", () => Results.Ok(new { status = "ok", message = "Wedding Upload API" }));
 
 // ── Upload endpoint ───────────────────────────────────────────────────
 app.MapPost("/upload", async Task<IResult> (HttpRequest request, GoogleDriveService drive) =>
@@ -87,9 +90,6 @@ app.MapGet("/gallery", async (GoogleDriveService drive, int? limit) =>
     var photos = await drive.ListPhotosAsync(limit ?? 200);
     return Results.Ok(new { photos, count = photos.Count });
 });
-
-app.UseDefaultFiles();
-app.UseStaticFiles();
 
 app.Run();
 
