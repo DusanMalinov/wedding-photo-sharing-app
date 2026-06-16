@@ -1,0 +1,6 @@
+@WeddingPhotoSharingApp_HostAddress = http://localhost:5100
+
+GET {{WeddingPhotoSharingApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

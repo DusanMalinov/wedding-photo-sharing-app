@@ -1,0 +1,57 @@
+﻿# Build folders
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+/.vs
+/WeddingPhotoSharingApp/.vs
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Publish output
+publish/
+
+# Docker
+docker-compose.override.yml
+
+# Secrets
+secrets/
+service-account.json
+*.p12
+
+# Local appsettings
+appsettings.Development.json
+
+# Environment files
+.env
+.env.*
+
+# Certificates
+*.pfx
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (ako koristiš frontend build)
+node_modules/
+
+# Temporary files
+tmp/
+temp/
