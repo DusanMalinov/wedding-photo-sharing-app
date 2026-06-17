@@ -7,7 +7,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -89,13 +91,13 @@
         }
 
         .hero-names {
-            font-family: Cinzel, serif;
-            font-weight: 400;
-            color: var(--blue-dark);
-            font-size: clamp(70px, 9vw, 108px);
-            line-height: 1.02;
-            letter-spacing: .15em;
-            text-transform: uppercase;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(65px, 6vw, 100px);
+            color: #2f4a6b;
+            line-height: .95;
+            letter-spacing: 0;
+            text-transform: none;
+            opacity: .86;
         }
 
         .hero-amp {
@@ -770,6 +772,630 @@
         .footer-card {
             margin-top: 20px !important;
         }
+
+        /* ─────────────────────────────────────────────────────────────
+        Refined wedding style — added polish without changing behavior
+        ───────────────────────────────────────────────────────────── */
+
+        :root {
+            --cream: #fff8ea;
+            --panel: #fff3dc;
+            --text: #263248;
+            --blue-dark: #1f3858;
+            --gold: #b98936;
+            --gold-soft: #e8c985;
+            --rose: #a86f65;
+            --shadow-soft: 0 24px 70px rgba(48, 34, 16, .16);
+            --shadow-card: 0 18px 45px rgba(54, 36, 12, .13);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text);
+            background: radial-gradient(circle at 18% 0%, rgba(255, 255, 255, .72), transparent 34%), radial-gradient(circle at 88% 10%, rgba(232, 201, 133, .28), transparent 30%), linear-gradient(135deg, #fff9ee 0%, #f2dfbb 48%, #fff5e5 100%) !important;
+        }
+
+        .app {
+            width: min(1120px, 100%) !important;
+            background: linear-gradient(rgba(255, 249, 236, .90), rgba(255, 245, 226, .90)), var(--tile) center top / 420px repeat !important;
+            box-shadow: var(--shadow-soft) !important;
+        }
+
+            .app::before,
+            .app::after {
+                display: none !important;
+            }
+
+        .content {
+            width: min(920px, calc(100% - 48px)) !important;
+            padding: 64px 0 42px !important;
+        }
+
+        .hero {
+            position: relative;
+            padding: 58px 28px 46px !important;
+            margin: 0 auto 30px;
+            border-radius: 42px;
+            background: linear-gradient(rgba(255, 250, 240, .86), rgba(255, 246, 229, .84)), var(--tile) center / 340px repeat;
+            border: 1px solid rgba(185, 137, 54, .34);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+        }
+
+            .hero::before,
+            .hero::after {
+                content: "";
+                position: absolute;
+                width: 240px;
+                height: 240px;
+                border: 1px solid rgba(185, 137, 54, .18);
+                border-radius: 50%;
+                pointer-events: none;
+            }
+
+            .hero::before {
+                top: -140px;
+                left: -110px;
+            }
+
+            .hero::after {
+                right: -120px;
+                bottom: -150px;
+            }
+
+        .hero-kicker {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            padding: 8px 18px;
+            border: 1px solid rgba(185, 137, 54, .42);
+            border-radius: 999px;
+            color: var(--gold);
+            background: rgba(255, 255, 255, .42);
+            font-family: Cinzel, serif;
+            font-size: 12px;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .hero-names,
+        .hero-date,
+        .line,
+        .blue-dot,
+        .hero-lead,
+        .hero-actions {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-names {
+            font-size: clamp(54px, 9vw, 100px) !important;
+            letter-spacing: .12em !important;
+            text-shadow: 0 8px 28px rgba(31, 56, 88, .10);
+        }
+
+        .hero-amp {
+            color: var(--gold) !important;
+            margin: 8px 0 4px !important;
+            opacity: 0.7
+        }
+
+        .hero-date {
+            margin-top: 26px !important;
+            color: var(--gold) !important;
+            font-size: clamp(16px, 3.2vw, 24px) !important;
+        }
+
+        .line {
+            width: min(320px, 72%) !important;
+            margin-top: 18px !important;
+        }
+
+        .blue-dot {
+            opacity: .78;
+        }
+
+        .hero-lead {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #34435a !important;
+            font-size: clamp(21px, 3vw, 28px) !important;
+            line-height: 1.32 !important;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-family: Cinzel, serif;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+            .hero-btn:hover {
+                transform: translateY(-2px);
+            }
+
+            .hero-btn.primary {
+                color: #fffaf0;
+                background: linear-gradient(135deg, var(--blue-dark), #385b83);
+                box-shadow: 0 12px 26px rgba(31, 56, 88, .22);
+            }
+
+            .hero-btn.secondary {
+                color: var(--blue-dark);
+                background: rgba(255, 255, 255, .62);
+                border: 1px solid rgba(31, 56, 88, .18);
+            }
+
+        .upload-shell {
+            padding: 1px !important;
+            border: 0 !important;
+            border-radius: 34px !important;
+            background: linear-gradient(135deg, rgba(185,137,54,.70), rgba(255,255,255,.70), rgba(185,137,54,.52)) !important;
+            box-shadow: var(--shadow-card) !important;
+        }
+
+        .upload-panel {
+            border: 0 !important;
+            border-radius: 32px !important;
+            padding: 46px 34px 36px !important;
+            background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.92), transparent 48%), linear-gradient(180deg, rgba(255,250,240,.96), rgba(255,242,220,.94)) !important;
+        }
+
+        .drop-zone {
+            border-radius: 28px;
+            padding: 24px 20px 22px !important;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+            .drop-zone:hover,
+            .drop-zone.dragover {
+                background: rgba(255, 255, 255, .45) !important;
+                transform: translateY(-1px);
+            }
+
+        .drop-icon {
+            width: 76px !important;
+            height: 76px !important;
+            filter: drop-shadow(0 8px 18px rgba(185, 137, 54, .16));
+        }
+
+        .drop-title {
+            font-size: clamp(24px, 4.2vw, 34px) !important;
+            letter-spacing: .12em !important;
+        }
+
+        .drop-copy {
+            max-width: 500px;
+            margin: 0 auto;
+            color: #425069 !important;
+        }
+
+        .choose-button,
+        .upload-btn,
+        .more-btn {
+            border-radius: 999px !important;
+            box-shadow: 0 12px 25px rgba(185, 137, 54, .16);
+        }
+
+        .choose-button {
+            background: linear-gradient(135deg, #f1d38d, #b98936) !important;
+            color: #fff9eb !important;
+            border: 0 !important;
+        }
+
+        .guest-field {
+            max-width: 460px !important;
+            margin: 24px auto 0 !important;
+        }
+
+            .guest-field label {
+                color: #4f5a6e !important;
+                font-family: Cinzel, serif;
+                font-size: 12px !important;
+                letter-spacing: .12em;
+                text-transform: uppercase;
+            }
+
+            .guest-field input {
+                margin-top: 8px;
+                border: 1px solid rgba(185, 137, 54, .34) !important;
+                border-radius: 18px !important;
+                background: rgba(255,255,255,.72) !important;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+            }
+
+        .upload-btn {
+            min-height: 50px;
+            background: linear-gradient(135deg, var(--blue-dark), #3d628d) !important;
+            color: #fffaf0 !important;
+            border: 0 !important;
+        }
+
+            .upload-btn:not(:disabled):hover {
+                transform: translateY(-2px);
+                box-shadow: 0 16px 30px rgba(31, 56, 88, .22);
+            }
+
+        .status-msg.success,
+        .status-msg.error,
+        .status-msg.info {
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 18px;
+        }
+
+        .gallery-panel {
+            border: 0 !important;
+            border-radius: 34px !important;
+            padding: 34px 30px 40px !important;
+            background: linear-gradient(rgba(255,250,240,.94), rgba(255,244,225,.94)), var(--tile) center / 360px repeat !important;
+            box-shadow: var(--shadow-card) !important;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 5vw, 42px) !important;
+        }
+
+        .section-sub {
+            font-family: "Cormorant Garamond", serif;
+            font-style: italic;
+            font-size: 20px !important;
+            color: #536071 !important;
+        }
+
+        .gallery-toolbar {
+            padding: 12px 14px;
+            margin: 10px 0 22px !important;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .48);
+            border: 1px solid rgba(185, 137, 54, .18);
+        }
+
+        .gallery-refresh {
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+            .gallery-refresh:hover {
+                background: rgba(31, 56, 88, .08);
+            }
+
+        .gallery-grid {
+            gap: 16px !important;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)) !important;
+        }
+
+        .gallery-item {
+            border-radius: 20px !important;
+            overflow: hidden !important;
+            box-shadow: 0 14px 28px rgba(38, 31, 20, .14) !important;
+            background: rgba(255, 255, 255, .75);
+            transform: translateZ(0);
+        }
+
+            .gallery-item img {
+                transition: transform .35s ease, filter .35s ease;
+            }
+
+            .gallery-item:hover img {
+                transform: scale(1.045);
+                filter: saturate(1.05) contrast(1.02);
+            }
+
+        .photo-credit {
+            backdrop-filter: blur(10px);
+            background: linear-gradient(180deg, transparent, rgba(20, 24, 32, .66)) !important;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 17px !important;
+        }
+
+        .gallery-empty,
+        .gallery-loading {
+            border: 1px dashed rgba(185, 137, 54, .38);
+            border-radius: 22px;
+            background: rgba(255,255,255,.48);
+        }
+
+        .more-btn {
+            display: inline-flex !important;
+            margin-top: 28px !important;
+            background: rgba(255,255,255,.62) !important;
+            border: 1px solid rgba(185, 137, 54, .28) !important;
+            color: var(--blue-dark) !important;
+        }
+
+        .footer-tiles {
+            display: none !important;
+        }
+
+        .footer-card {
+            margin: 36px auto 0 !important;
+            padding: 28px 20px 32px !important;
+            border-radius: 36px !important;
+            border: 1px solid rgba(185,137,54,.36) !important;
+            background: rgba(255, 248, 235, .78) !important;
+            box-shadow: var(--shadow-card);
+        }
+
+        .lightbox {
+            backdrop-filter: blur(6px);
+        }
+
+        .lb-btn {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,.10) !important;
+        }
+
+        .lb-caption {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 20px;
+        }
+
+        @media (max-width: 760px) {
+            .content {
+                width: min(100% - 28px, 920px) !important;
+                padding-top: 22px !important;
+            }
+
+            .hero {
+                border-radius: 28px;
+                padding: 38px 18px 34px !important;
+                margin-bottom: 22px;
+            }
+
+            .hero-kicker {
+                font-size: 10px;
+                letter-spacing: .18em;
+            }
+
+            .hero-names {
+                font-size: clamp(42px, 16vw, 70px) !important;
+                letter-spacing: .07em !important;
+            }
+
+            .hero-actions {
+                gap: 10px;
+            }
+
+            .hero-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .upload-panel {
+                padding: 30px 14px 28px !important;
+            }
+
+            .gallery-panel {
+                padding: 26px 14px 30px !important;
+            }
+
+            .gallery-toolbar {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(138px, 1fr)) !important;
+                gap: 12px !important;
+            }
+
+            .footer-card {
+                font-size: 19px !important;
+            }
+        }
+
+
+        .gallery-refresh {
+            width: auto !important;
+            min-width: 0 !important;
+            padding: 6px 8px !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            color: #6b7280 !important;
+            font-size: 13px !important;
+            opacity: .75;
+            transition: opacity .2s ease, transform .2s ease;
+        }
+
+            .gallery-refresh:hover {
+                opacity: 1;
+                transform: rotate(20deg);
+                background: transparent !important;
+            }
+
+
+        /* Refresh button moved below gallery and made subtle */
+        .gallery-toolbar {
+            background: transparent !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 0 18px !important;
+        }
+
+        .gallery-refresh-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 22px 0 2px;
+        }
+
+        .gallery-refresh {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: auto !important;
+            height: auto !important;
+            min-width: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: transparent !important;
+            border: 0 !important;
+            box-shadow: none !important;
+            color: #6f5f4b !important;
+            font-family: Lato, sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+            letter-spacing: .04em !important;
+            opacity: .72;
+            cursor: pointer;
+            text-transform: none !important;
+        }
+
+            .gallery-refresh:hover {
+                opacity: 1;
+                background: transparent !important;
+                border: 0 !important;
+                box-shadow: none !important;
+                transform: none !important;
+            }
+
+            .gallery-refresh svg,
+            .gallery-refresh .refresh-icon {
+                width: 16px !important;
+                height: 16px !important;
+            }
+
+
+        .gallery-refresh-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .gallery-refresh {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            color: #6f5f4b;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+
+        /* Visible centered refresh under gallery */
+        .gallery-refresh-wrap {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            width: 100% !important;
+            margin: 26px auto 0 !important;
+            position: relative !important;
+            z-index: 20 !important;
+        }
+
+        .gallery-refresh {
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            background: transparent !important;
+            background-image: none !important;
+            border: 0 !important;
+            outline: 0 !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            color: #6f5f4b !important;
+            font-family: Lato,sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            letter-spacing: .03em !important;
+            cursor: pointer !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            opacity: .78 !important;
+            text-transform: none !important;
+        }
+
+            .gallery-refresh:hover {
+                opacity: 1 !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                transform: none !important;
+            }
+
+
+        /* Final polish tweaks */
+        .guest-field {
+            max-width: 460px !important;
+            margin: 24px auto 0 !important;
+        }
+
+            .guest-field label {
+                display: block !important;
+                width: 100% !important;
+                max-width: 460px !important;
+                margin: 0 auto 8px !important;
+                text-align: left !important;
+            }
+
+        .upload-btn {
+            display: block !important;
+            width: 100% !important;
+            max-width: 460px !important;
+            margin: 18px auto 0 !important;
+        }
+
+        .hero-names {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            line-height: 0.95 !important;
+        }
+
+        .hero-amp {
+            display: block !important;
+            line-height: 0.8 !important;
+            margin: 2px 0 0 !important;
+            transform: translateY(4px) !important;
+        }
+
+
+        /* Final hero name optical alignment */
+        .hero-name-line {
+            display: block !important;
+        }
+
+        .hero-date {
+            margin-top: 34px !important;
+        }
+
+        .hero-milica {
+            transform: translateY(10px) !important;
+        }
+
     </style>
 </head>
 
@@ -777,11 +1403,16 @@
     <div class="app">
         <main class="content">
             <section class="hero" id="top">
-                <h1 class="hero-names">Milica<span class="hero-amp">&amp;</span>Dušan</h1>
+                <p class="hero-kicker">Wedding Memories</p>
+                <h1 class="hero-names"><span class="hero-name-line hero-milica">Milica</span><span class="hero-amp">&amp;</span><span class="hero-name-line hero-dusan">Dušan</span></h1>
                 <p class="hero-date">04. JUL 2026.</p>
                 <div class="line"></div>
                 <div class="blue-dot">✤</div>
-                <p class="hero-lead">Podelite s nama svoje najlepše trenutke<br>i uspomene s našeg venčanja.</p>
+                <p class="hero-lead">Podelite s nama najlepše trenutke, spontane osmehe<br>i uspomene koje ćemo zauvek čuvati.</p>
+                <div class="hero-actions">
+                    <a class="hero-btn primary" href="#upload">Dodaj fotografije</a>
+                    <a class="hero-btn secondary" href="#galerija">Pogledaj galeriju</a>
+                </div>
             </section>
 
             <section id="upload">
@@ -789,21 +1420,19 @@
                     <div class="upload-panel">
                         <div class="drop-zone" id="drop-zone">
                             <div class="drop-top">
-                                <span class="flourish">❧</span>
                                 <svg class="drop-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="6" y="10" width="36" height="28" rx="4" />
                                     <circle cx="17" cy="22" r="3" />
                                     <path d="M6 34l9-9 6 6 5-5 10 10" />
                                     <path d="M32 6l-4-4-4 4M28 2v10" />
                                 </svg>
-                                <span class="flourish">❧</span>
                             </div>
 
-                            <p class="drop-title">Dodajte fotografije</p>
+                            <p class="drop-title">Podelite fotografije</p>
                             <p class="drop-copy">Povucite i spustite fotografije ovde<br>ili kliknite za odabir</p>
                             <div class="mini-line">— ❦ —</div>
                             <p class="drop-sub"><span class="choose-button" id="browse-btn">Odaberite fotografije</span></p>
-                            <p class="formats">Podržani formati: JPG, PNG, HEIC<br>Maksimalna veličina: 10 MB po fotografiji</p>
+                            <p class="formats">Podržani formati: JPG, PNG, HEIC<br>Maksimalna veličina: 20 MB po fotografiji</p>
                             <input type="file" id="file-input" accept="image/*" multiple />
                         </div>
 
@@ -829,20 +1458,25 @@
 
                     <div class="gallery-toolbar">
                         <p class="gallery-count" id="gallery-count"></p>
-                        <button class="gallery-refresh" onclick="loadGallery()">
-                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M11 6.5A4.5 4.5 0 1 1 6.5 2" />
-                                <path d="M8.5 2H11V4.5" />
-                            </svg>
-                            Osveži
-                        </button>
+
                     </div>
 
                     <div class="gallery-grid" id="gallery-grid">
-                        <div class="gallery-loading"><div class="spinner"></div> Učitavanje fotografija…</div>
+                        <div class="gallery-loading">
+                            <div class="spinner"></div>
+
+                            Učitavanje fotografija…
+                        </div>
+                    </div>
+                    <div class="gallery-refresh-wrap" style="display:flex;justify-content:center;align-items:center;width:100%;margin:26px auto 0;position:relative;z-index:20;">
+                        <button class="gallery-refresh" type="button" onclick="loadGallery()" style="appearance:none;-webkit-appearance:none;background:transparent;border:0;box-shadow:none;padding:0;margin:0;color:#6f5f4b;font-family:Lato,sans-serif;font-size:14px;font-weight:400;letter-spacing:.03em;cursor:pointer;display:inline-flex;align-items:center;gap:8px;">
+                            <span aria-hidden="true" style="font-size:16px;line-height:1;">↻</span>
+                            <span>Osveži galeriju</span>
+                        </button>
                     </div>
 
-                    <a class="more-btn" href="#upload">Prikaži više fotografija</a>
+
+
                 </div>
             </section>
 
