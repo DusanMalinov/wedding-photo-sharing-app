@@ -3,6 +3,7 @@ using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Drive.v3;
 using Google.Apis.Services;
+using System.Security.AccessControl;
 
 namespace WeddingPhotoSharingApp.Services
 {
@@ -11,6 +12,7 @@ namespace WeddingPhotoSharingApp.Services
         private readonly DriveService _drive;
         private readonly string _folderId;
         private readonly ILogger<GoogleDriveService> _logger;
+        private const string GoogleDriveUrl = "https://drive.google.com/";
 
         public GoogleDriveService(IConfiguration config, ILogger<GoogleDriveService> logger)
         {
@@ -76,8 +78,21 @@ namespace WeddingPhotoSharingApp.Services
 
                 if (result.Status == Google.Apis.Upload.UploadStatus.Completed)
                 {
-                    _logger.LogInformation("Uploaded: {FileName} → {FileId}", fileName, request.ResponseBody?.Id);
-                    return request.ResponseBody?.Id;
+                    var fileId = request.ResponseBody?.Id;
+
+                    if (!string.IsNullOrEmpty(fileId))
+                    {
+                        var permission = new Google.Apis.Drive.v3.Data.Permission
+                        {
+                            Type = "anyone",
+                            Role = "reader"
+                        };
+
+                        await _drive.Permissions.Create(permission, fileId).ExecuteAsync();
+                    }
+
+                    _logger.LogInformation("Uploaded: {FileName} → {FileId}", fileName, fileId);
+                    return fileId;
                 }
 
                 _logger.LogError("Upload failed for {FileName}: {Exception}", fileName, result.Exception?.Message);
@@ -111,8 +126,8 @@ namespace WeddingPhotoSharingApp.Services
                         Name: f.Name,
                         CreatedAt: f.CreatedTimeDateTimeOffset?.ToString("o") ?? string.Empty,
                         // Thumbnail URL koji Google Drive generira automatski
-                        ThumbnailUrl: $"https://drive.google.com/thumbnail?id={f.Id}&sz=w400",
-                        FullUrl: $"https://drive.google.com/uc?id={f.Id}&export=view"
+                        ThumbnailUrl: $"{GoogleDriveUrl}thumbnail?id={f.Id}&sz=w400",
+                        FullUrl: $"{GoogleDriveUrl}thumbnail?id={f.Id}&sz=w1800"
                     ))
                     .ToList();
             }
